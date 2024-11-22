@@ -2,6 +2,7 @@ package com.example.pertemuan8.ui.view.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -14,6 +15,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -83,6 +85,71 @@ fun TampilData(
             )
             .fillMaxSize()
     ){
-
+        Column (
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ){
+            Text(
+                text = "Data Diri Mahasiswa",
+                fontWeight = FontWeight.Bold,
+                fontSize = 20.sp
+            )
+            Text(
+                text = "Hasil Rencana Studi",
+                fontWeight = FontWeight.Bold,
+                fontSize = 15.sp
+            )
+            Spacer(modifier = Modifier.padding(8.dp))
+            HasilData(
+                Judul  = "Nama",
+                Isinya = mahasiswa.nama
+            )
+            Spacer(modifier = Modifier.padding(4.dp))
+            HasilData(
+                Judul  = "NIM",
+                Isinya = mahasiswa.nim
+            )
+            Spacer(modifier = Modifier.padding(4.dp))
+            HasilData(
+                Judul  = "Email",
+                Isinya = mahasiswa.email
+            )
+            Spacer(modifier = Modifier.padding(4.dp))
+            HasilData(
+                Judul  = "Mata Kuliah",
+                Isinya = rencanaStudi.namaMK
+            )
+            Spacer(modifier = Modifier.padding(4.dp))
+            HasilData(
+                Judul  = "Kelas",
+                Isinya = rencanaStudi.kelas
+            )
+            Spacer(modifier = Modifier.padding(8.dp))
+            Row  (
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.Center
+            ){
+                Button(
+                    onClick = {onBackButtonClicked()}
+                ) {
+                    Text("Kembali ke Halaman Utama")
+                }
+            }
+        }
+    }
+}
+@Composable
+fun HasilData(
+    Judul: String,
+    Isinya:String
+){
+    Row(modifier = Modifier.fillMaxWidth()
+        .padding(16.dp),
+        horizontalArrangement = Arrangement.SpaceBetween) {
+        Text(Judul, modifier = Modifier.weight(0.8f))
+        Text(":", modifier = Modifier.weight(0.2f))
+        Text(Isinya, modifier = Modifier.weight(2f))
     }
 }
