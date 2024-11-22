@@ -119,7 +119,7 @@ fun TampilData(
             Spacer(modifier = Modifier.padding(4.dp))
             HasilData(
                 Judul  = "Mata Kuliah",
-                Isinya = rencanaStudi.namaMK
+                Isinya = rencanaStudi.namaMk
             )
             Spacer(modifier = Modifier.padding(4.dp))
             HasilData(

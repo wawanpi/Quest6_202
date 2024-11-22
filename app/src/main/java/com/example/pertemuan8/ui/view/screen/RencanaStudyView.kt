@@ -39,6 +39,10 @@ import androidx.compose.ui.unit.sp
 import com.example.pertemuan8.R
 import com.example.pertemuan8.data.MataKuliah
 import com.example.pertemuan8.data.RuangKelas
+import com.example.pertemuan8.model.Mahasiswa
+import com.example.pertemuan8.ui.view.widget.DynamicSelectedTextField
+
+
 @Composable
 fun RencanaStudyView(
     mahasiswa: Mahasiswa,
@@ -109,13 +113,11 @@ var chosenDropdown by remember { mutableStateOf("") }
                     fontWeight = FontWeight.Light
                 )
                 Spacer(modifier = Modifier.padding(8.dp))
-                DynamicSelectField(
-                    selectedText = chosenDropdown,
+                DynamicSelectedTextField(
+                    selectedValue = chosenDropdown,
                     options = MataKuliah.option,
                     label = "Mata Kuliah",
-                    onValueChangeEvent = {
-                        chosenDropdown = it
-                    }
+                    onValueChangedEvent = { chosenDropdown = it }
                 )
                 Spacer(modifier = Modifier.padding(8.dp))
                 HorizontalDivider()
