@@ -82,7 +82,7 @@ var chosenDropdown by remember { mutableStateOf("") }
                     color = Color.White
                 )
                 Text(
-                    text = mahasiswa.nama,
+                    text = mahasiswa.nim,
                     fontWeight = FontWeight.Light,
                     fontSize = 12.sp,
                     color = Color.White
