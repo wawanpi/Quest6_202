@@ -67,7 +67,7 @@ fun MahasiswaApp(
     }
     composable(route = Halaman.Tampil.name) {
         TampilData(
-            mahasiswa = mahasiswaUiState,
+            mahasiswa = mahasiwaUiState,
             rencanaStudi = KrsUiState,
             onBackButtonClicked = {
                 navController.navigate(Halaman.Splash.name) {
