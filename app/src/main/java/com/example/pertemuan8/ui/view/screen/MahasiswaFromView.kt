@@ -51,7 +51,7 @@ fun MahasiswaFormView(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = colorResource(id = R.color.teal_700)),
+            .background(color = colorResource(id = R.color.primary)),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Spacer(modifier = Modifier.padding(16.dp))
@@ -74,7 +74,8 @@ fun MahasiswaFormView(
                 Text(
                     "Unggul dan Islami",
                     color = Color.Red,
-                    fontWeight = FontWeight.Light
+                    fontSize = 15.sp,
+                    fontWeight = FontWeight.Bold
                 )
             }
         }

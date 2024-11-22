@@ -56,7 +56,7 @@ var chosenDropdown by remember { mutableStateOf("") }
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = colorResource(id = R.color.teal_700))
+            .background(color = colorResource(id = R.color.primary))
     ){
         Row (
             modifier = Modifier
